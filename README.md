@@ -36,6 +36,20 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Deployment
+
+This project is configured for deployment on Netlify using the included `netlify.toml` file.
+
+- Build command: `npm run build`
+- Publish directory: `dist/my-portfolio`
+- SPA redirect: configured with `/*` to `/index.html`
+
+To deploy:
+
+1. Create a GitHub repository and push this project to it.
+2. Connect the repository to your Netlify team.
+3. Netlify will use the existing `netlify.toml` settings to build and publish the site.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
