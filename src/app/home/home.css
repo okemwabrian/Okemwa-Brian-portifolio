@@ -212,3 +212,45 @@ h2 {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* MOBILE RESPONSIVENESS for the Hero Section */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse; /* Puts the portrait on top of the text */
+    text-align: center; /* Centers all the text */
+    gap: 30px;
+    padding-top: 2rem;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  h1 {
+    font-size: 2.8rem; /* Shrinks your giant name text for mobile */
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .action-buttons {
+    flex-direction: column; /* Stacks the buttons on top of each other */
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%; /* Makes buttons full-width for easy tapping */
+    box-sizing: border-box;
+  }
+
+  /* Shrinks the portrait slightly for mobile */
+  .hero-image img {
+    width: 250px;
+    height: 250px;
+  }
+}
