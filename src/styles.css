@@ -1,9 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
-body, html {
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(135deg, #040A22 0%, #1D4ED8 100%);
-  color: white;
+  font-family: 'Avenir Next', 'Trebuchet MS', sans-serif;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0c0c0c;
+  color: #ffffff;
+}
+
+app-root,
+app-root main,
+app-root > div {
+  background: transparent !important;
+}
+
+:root {
+  --ink: #08100d;
+  --surface: rgba(18, 53, 43, 0.72);
+  --surface-solid: #12352b;
+  --brass: #d9b044;
+  --brass-bright: #f0cb69;
+  --text: #f5f3ec;
+  --muted: #aab7b0;
+  --line: rgba(217, 176, 68, 0.26);
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -1,28 +1,41 @@
-<div class="hero-container">
+<section class="hero-container" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">HELLO, I'M</p>
-    <h1 class="hero-title">Okemwa <span class="name-glow">Brian</span></h1>
-    <h2>Software Engineer</h2>
-    <p class="hero-copy-text">Welcome to my digital space where I keep "my everything." Feel free to explore my latest projects, learn more about my journey, or reach out to connect!</p>
+    <p class="eyebrow"><span class="status-dot"></span> Available for thoughtful builds</p>
+    <h1 id="hero-title">Backend systems<br><span>with staying power.</span></h1>
+    <p class="hero-copy-text">I am Okemwa Brian, a software engineer focused on backend architecture, system design, and dependable full-stack products.</p>
+
+    <div class="hero-tags" aria-label="Core technical specialties">
+      <span>Python</span>
+      <span>Java</span>
+      <span>TypeScript</span>
+      <span>System Design</span>
+    </div>
 
     <div class="action-buttons">
-      <a routerLink="/projects" class="btn primary"><i class="bi bi-briefcase-fill"></i> View My Work</a>
-      <a routerLink="/contact" class="btn secondary"><i class="bi bi-envelope-fill"></i> Get in Touch</a>
+      <a routerLink="/projects" class="btn primary">Explore selected work <span aria-hidden="true">↗</span></a>
+      <a routerLink="/contact" class="btn secondary">Start a conversation <span aria-hidden="true">↗</span></a>
     </div>
 
-    <div class="social-links">
-      <a href="https://github.com/okemwabrian" target="_blank" class="social-link"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/okemwa-brian-8807b3321/" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
-      <a href="https://twitter.com/" target="_blank" class="social-link"><i class="bi bi-twitter"></i></a>
-      <a href="https://www.behance.net/" target="_blank" class="social-link"><i class="bi bi-behance"></i></a>
-      <a href="mailto:okemwabrian1350@gmail.com" class="social-link"><i class="bi bi-envelope-fill"></i></a>
+    <div class="hero-footnote">
+      <span class="footnote-line"></span>
+      <span>Monoliths, APIs, data, and the details between them.</span>
     </div>
   </div>
 
-  <div class="hero-image">
-    <div class="portrait-frame">
-      <img src="brian.png" alt="Profile Picture">
-      <div class="frame-base"></div>
+  <div class="hero-visual" aria-label="Rotating wireframe icosahedron representing connected systems">
+    <div class="visual-label visual-label-top">SYSTEM / 01</div>
+    <div class="canvas-shell">
+      <div class="canvas-glow"></div>
+      <canvas #heroCanvas id="hero-3d-canvas"></canvas>
+      <div class="axis axis-horizontal"></div>
+      <div class="axis axis-vertical"></div>
+      <figure class="portrait-card">
+        <div class="portrait-image-frame">
+          <img src="brian.png" alt="Portrait of Okemwa Brian">
+        </div>
+        <figcaption>OKEMWA / BRIAN</figcaption>
+      </figure>
     </div>
+    <div class="visual-label visual-label-bottom">BUILD / WITH / INTENT</div>
   </div>
-</div>
+</section>

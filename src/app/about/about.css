@@ -15,8 +15,8 @@
   gap: 0.5rem;
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
-  background: rgba(255, 42, 163, 0.14);
-  color: #ff2aa3;
+  background: rgba(217, 176, 68, 0.14);
+  color: #d9b044;
   font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -27,7 +27,7 @@
   margin: 0;
   font-weight: 900;
   line-height: 1.05;
-  background: linear-gradient(90deg, #ff2aa3, #ff6bcf);
+  background: linear-gradient(90deg, #d9b044, #1f4717);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,8 +49,8 @@
 
 .bio-card,
 .skills-card {
-  background: rgba(255, 42, 163, 0.06);
-  border: 1px solid rgba(255, 42, 163, 0.22);
+  background: rgba(31, 71, 23, 0.16);
+  border: 1px solid rgba(217, 176, 68, 0.22);
   border-radius: 28px;
   padding: 2.3rem;
   backdrop-filter: blur(14px);
@@ -69,7 +69,7 @@
 
 .skills-header h3 {
   font-size: 1.75rem;
-  color: #ff2aa3;
+  color: #d9b044;
   margin: 0 0 0.7rem 0;
 }
 
@@ -86,8 +86,8 @@
 }
 
 .skill-tag {
-  background: rgba(255, 42, 163, 0.1);
-  border: 1px solid rgba(255, 42, 163, 0.3);
+  background: rgba(31, 71, 23, 0.2);
+  border: 1px solid rgba(217, 176, 68, 0.3);
   padding: 0.9rem 1.55rem;
   border-radius: 999px;
   color: #f8fafc;
@@ -97,8 +97,8 @@
 }
 
 .skill-tag:hover {
-  background: rgba(255, 42, 163, 0.24);
-  border-color: #ff2aa3;
+  background: rgba(217, 176, 68, 0.24);
+  border-color: #d9b044;
   transform: translateY(-3px);
 }
 
@@ -112,6 +112,18 @@
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+:host { display: block; }
+.about-container, .skills-section { animation: fadeIn 0.8s ease-in-out; }
+.about-label { background: rgba(217, 176, 68, 0.14); color: #d9b044; }
+.about-container h2 { background: linear-gradient(90deg, #f5f3ec, #d9b044); background-clip: text; -webkit-background-clip: text; }
+.about-intro, .bio-card p { color: #aab7b0; }
+.bio-card, .skills-card { background: rgba(18, 53, 43, 0.62); border-color: rgba(217, 176, 68, 0.24); border-radius: 4px; }
+.skills-header h3 { color: #d9b044; }
+.skills-header p { color: #aab7b0; }
+.skill-tag { background: rgba(217, 176, 68, 0.1); border-color: rgba(217, 176, 68, 0.3); color: #f5f3ec; border-radius: 2px; }
+.skill-tag:hover { background: rgba(217, 176, 68, 0.2); border-color: #d9b044; }
+.skill-category h4 { color: #c5d1c9; border-color: rgba(217, 176, 68, 0.16); }
 .skill-category {
   margin-bottom: 2rem;
 }
