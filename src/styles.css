@@ -9,8 +9,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #0c0c0c;
-  color: #ffffff;
+  background: #FFFAD3;
+  color: #292821;
 }
 
 app-root,
@@ -20,14 +20,12 @@ app-root > div {
 }
 
 :root {
-  --ink: #08100d;
-  --surface: rgba(18, 53, 43, 0.72);
-  --surface-solid: #12352b;
-  --brass: #d9b044;
-  --brass-bright: #f0cb69;
-  --text: #f5f3ec;
-  --muted: #aab7b0;
-  --line: rgba(217, 176, 68, 0.26);
+  --base: #FFFAD3;
+  --accent: #FFDBB0;
+  --ink: #292821;
+  --muted: #625f54;
+  --line: rgba(41, 40, 33, 0.16);
+  --surface: rgba(255, 219, 176, 0.52);
 }
 
 * {

@@ -137,3 +137,47 @@
   padding-bottom: 0.5rem;
   display: inline-block;
 }
+
+.about-container,
+.skills-section,
+.credentials-section { color: var(--ink); }
+
+.about-label { background: var(--accent); color: var(--ink); border-radius: 2px; }
+.about-container h2 { background: none; color: var(--ink); -webkit-text-fill-color: currentColor; }
+.about-intro,
+.bio-card p,
+.skills-header p,
+.skill-category h4 { color: var(--muted); }
+.bio-card,
+.skills-card { background: rgba(255, 219, 176, 0.42); border: 1px solid var(--line); border-radius: 4px; backdrop-filter: none; }
+.skills-header h3 { color: var(--ink); }
+.skill-tag { background: var(--base); border-color: var(--line); color: var(--ink); border-radius: 2px; }
+.skill-tag:hover { background: var(--accent); border-color: #625f54; }
+.skill-category h4 { border-color: var(--line); }
+
+.credentials-section {
+  margin: 3rem 0 0;
+  padding: 2.4rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.credentials-heading { margin-bottom: 1.5rem; }
+.section-kicker { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.credentials-heading h3 { margin: 0; color: var(--ink); font-size: clamp(1.7rem, 3vw, 2.25rem); line-height: 1.2; }
+.credentials-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 1.25rem; }
+.credential-group { padding: 1.5rem; border: 1px solid var(--line); border-radius: 4px; background: rgba(255, 219, 176, 0.38); }
+.credential-group h4 { margin: 0 0 1rem; color: var(--ink); font-size: 1.1rem; }
+.credential-group ul { list-style: none; display: grid; gap: 0.85rem; margin: 0; padding: 0; }
+.credential-group li { display: grid; gap: 0.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--line); }
+.credential-group li:last-child { padding-bottom: 0; border-bottom: 0; }
+.credential-group li strong { color: var(--ink); font-size: 0.95rem; line-height: 1.45; }
+.credential-group li span { color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.about-container + .quote-divider,
+.quote-divider { max-width: 820px; margin: 2.75rem auto 0; padding: 1.6rem 2rem; border-left: 4px solid #FFDBB0; color: var(--ink); }
+.quote-divider p { margin: 0 0 0.65rem; font-size: clamp(1.25rem, 2.4vw, 1.8rem); line-height: 1.45; }
+.quote-divider cite { color: var(--muted); font-size: 0.9rem; font-style: normal; }
+
+@media (max-width: 760px) {
+  .credentials-grid { grid-template-columns: 1fr; }
+  .credential-group { padding: 1.25rem; }
+}

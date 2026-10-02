@@ -35,7 +35,7 @@ export class App implements AfterViewInit, OnDestroy {
 
     const geometry = new THREE.IcosahedronGeometry(2.5, 2);
     const material = new THREE.MeshBasicMaterial({
-      color: 0xd9b044,
+      color: 0xffdbb0,
       transparent: true,
       opacity: 0.1,
       wireframe: true,

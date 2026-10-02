@@ -44,7 +44,7 @@ export class Home implements AfterViewInit, OnDestroy {
 
     const geometry = new THREE.IcosahedronGeometry(1.45, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0xd9b044,
+      color: 0xffdbb0,
       transparent: true,
       opacity: 0.92,
       wireframe: true,

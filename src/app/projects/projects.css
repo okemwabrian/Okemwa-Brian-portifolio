@@ -104,3 +104,14 @@
 :host { display: block; }
 .projects-container h2 { background: linear-gradient(90deg, #f5f3ec, #d9b044); background-clip: text; -webkit-background-clip: text; }
 .subtitle { color: #aab7b0; }
+
+.projects-container { color: var(--ink); }
+.projects-container h2 { background: none; color: var(--ink); -webkit-text-fill-color: currentColor; font-size: clamp(2.25rem, 5vw, 3.2rem); }
+.subtitle { color: var(--muted); }
+.project-card { background: rgba(255, 219, 176, 0.48); border: 1px solid var(--line); border-radius: 4px; backdrop-filter: none; }
+.project-card:hover { border-color: #625f54; box-shadow: 0 14px 30px rgba(41, 40, 33, 0.1); }
+.project-card h3 { color: var(--ink); }
+.project-card p { color: var(--muted); }
+.tech-stack span { background: var(--base); color: var(--ink); border: 1px solid var(--line); border-radius: 2px; }
+.btn-link { color: var(--ink); }
+.btn-link:hover { color: #625f54; }
