@@ -29,19 +29,19 @@
         @for (screenshot of screenshots; track screenshot.src; let index = $index) {
           <figure class="screenshot-item">
             <button class="screenshot-open" type="button" (click)="openScreenshot(screenshot)" [attr.aria-label]="'Expand screenshot: ' + screenshot.caption">
-              @if (unavailableScreenshots().has(screenshot.src)) {
+              @if (unavailableScreenshots().has(screenshot.thumbnailSrc)) {
                 <span class="screenshot-placeholder" aria-hidden="true">
-                  <span class="placeholder-mark">OF</span>
+                  <span class="placeholder-mark">{{ screenshot.brand }}</span>
                   <span>Screenshot asset pending</span>
                 </span>
               } @else {
                 <img
-                  [ngSrc]="screenshot.src"
+                  [ngSrc]="screenshot.thumbnailSrc"
                   [alt]="screenshot.alt"
                   [width]="screenshot.width"
                   [height]="screenshot.height"
                   [priority]="index === 0"
-                  (error)="markScreenshotUnavailable(screenshot.src)"
+                  (error)="markScreenshotUnavailable(screenshot.thumbnailSrc)"
                 >
               }
               <span class="expand-hint" aria-hidden="true">Expand <span>↗</span></span>
@@ -96,15 +96,98 @@
     </footer>
   </article>
 
-  <div class="project-grid" aria-label="Other projects">
-    <article class="project-card project-card-content">
-      <p class="project-category">Retail operations</p>
-      <h3>CorePoint POS</h3>
-      <p>A role-protected point-of-sale system for inventory, CRM, and sales management, with atomic transactions and a custom frontend.</p>
-      <div class="tech-stack"><span>Python</span><span>Django</span><span>Bootstrap 5</span></div>
-      <a href="https://github.com/okemwabrian/pos-backend-api.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </article>
+  <article class="project-card flagship-card pos-card" aria-labelledby="corepoint-title">
+    <header class="flagship-heading">
+      <div>
+        <p class="project-category">Retail operations <span>/</span> Point of sale &amp; inventory</p>
+        <h3 id="corepoint-title">CorePoint POS <span>Retail Checkout, Inventory &amp; Sales Management</span></h3>
+      </div>
+      <span class="corridor-tag">Point of sale <span aria-hidden="true">/</span> Operations</span>
+    </header>
 
+    <p class="project-overview">A role-protected retail operations platform connecting product inventory, customer records, and point-of-sale checkout. Atomic sale transactions keep checkout and stock changes together, while reporting gives operators a clear view of revenue, expenses, and profit.</p>
+
+    <section class="gallery-section" aria-labelledby="pos-gallery-title">
+      <div class="section-row">
+        <div>
+          <p class="section-kicker">Inside the platform</p>
+          <h4 id="pos-gallery-title">Product screens</h4>
+        </div>
+        <span class="gallery-count">04 screens</span>
+      </div>
+
+      <div class="screenshot-gallery">
+        @for (screenshot of posScreenshots; track screenshot.src; let index = $index) {
+          <figure class="screenshot-item">
+            <button class="screenshot-open" type="button" (click)="openScreenshot(screenshot)" [attr.aria-label]="'Expand screenshot: ' + screenshot.caption">
+              @if (unavailableScreenshots().has(screenshot.thumbnailSrc)) {
+                <span class="screenshot-placeholder" aria-hidden="true">
+                  <span class="placeholder-mark">{{ screenshot.brand }}</span>
+                  <span>Screenshot asset pending</span>
+                </span>
+              } @else {
+                <img
+                  [ngSrc]="screenshot.thumbnailSrc"
+                  [alt]="screenshot.alt"
+                  [width]="screenshot.width"
+                  [height]="screenshot.height"
+                  [priority]="index === 0"
+                  (error)="markScreenshotUnavailable(screenshot.thumbnailSrc)"
+                >
+              }
+              <span class="expand-hint" aria-hidden="true">Expand <span>↗</span></span>
+            </button>
+            <figcaption>{{ screenshot.caption }}</figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="project-details" aria-label="CorePoint POS engineering details">
+      <div class="detail-column">
+        <p class="section-kicker">Technology</p>
+        <h4>Built for the shop floor</h4>
+        <dl class="stack-list">
+          <div><dt>Backend &amp; architecture</dt><dd>Python · Django · Backend API</dd></div>
+          <div><dt>Frontend &amp; interface</dt><dd>Custom frontend · Bootstrap 5 · Responsive workflows</dd></div>
+          <div><dt>Security &amp; transactions</dt><dd>Role-protected access · Atomic sales transactions</dd></div>
+        </dl>
+      </div>
+
+      <div class="detail-column feature-column">
+        <p class="section-kicker">Engineering highlights</p>
+        <h4>From product to completed sale</h4>
+        <ol class="feature-list">
+          <li><strong>Inventory control</strong><span>Manage a product catalog, monitor stock levels, and restock items from the inventory workspace.</span></li>
+          <li><strong>Fast checkout</strong><span>Build a cart from product categories and manage payment type, customer, price type, and discounts at the POS terminal.</span></li>
+          <li><strong>Consistent sales</strong><span>Role-protected workflows and atomic transactions keep sale processing reliable.</span></li>
+          <li><strong>Business visibility</strong><span>Review revenue, expenses, profit, and sales records through the dashboard and report views.</span></li>
+          <li><strong>Operational records</strong><span>Keep customer and sales management connected to day-to-day retail activity.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="architecture-section" id="corepoint-pos-flow" aria-labelledby="pos-flow-title">
+      <div class="architecture-copy">
+        <p class="section-kicker">Retail workflow / case study</p>
+        <h4 id="pos-flow-title">A connected point-of-sale workflow</h4>
+        <p>Inventory, checkout, customer details, and sales reporting work together to support the full retail transaction.</p>
+      </div>
+      <ol class="flow-list" aria-label="CorePoint POS workflow">
+        <li><span>01</span><strong>Manage stock</strong><small>Catalog · stock levels</small></li>
+        <li><span>02</span><strong>Build a cart</strong><small>Products · customer · pricing</small></li>
+        <li><span>03</span><strong>Complete sale</strong><small>Payment · atomic transaction</small></li>
+        <li><span>04</span><strong>Review results</strong><small>Dashboard · reports</small></li>
+      </ol>
+    </section>
+
+    <footer class="project-actions">
+      <a class="action-primary" href="https://github.com/okemwabrian/pos-backend-api.git" target="_blank" rel="noopener noreferrer">View GitHub Code <span aria-hidden="true">↗</span></a>
+      <a class="action-secondary" href="#corepoint-pos-flow">Retail Workflow / Case Study <span aria-hidden="true">↓</span></a>
+    </footer>
+  </article>
+
+  <div class="project-grid" aria-label="Other projects">
     <article class="project-card project-card-content">
       <p class="project-category">Mobile platform</p>
       <h3>Kazi Connect</h3>
@@ -119,7 +202,7 @@
     @if (activeScreenshot(); as screenshot) {
       <figure>
         @if (unavailableScreenshots().has(screenshot.src)) {
-          <div class="screenshot-placeholder dialog-placeholder"><span class="placeholder-mark">OF</span><span>Screenshot asset pending</span></div>
+          <div class="screenshot-placeholder dialog-placeholder"><span class="placeholder-mark">{{ screenshot.brand }}</span><span>Screenshot asset pending</span></div>
         } @else {
           <img [ngSrc]="screenshot.src" [alt]="screenshot.alt" [width]="screenshot.width" [height]="screenshot.height" priority (error)="markScreenshotUnavailable(screenshot.src)">
         }
