@@ -1,67 +1,130 @@
-<div class="projects-container">
-  <h2>My Projects</h2>
-  <p class="subtitle">A selection of my recent software engineering work.</p>
+<section class="projects-container" aria-labelledby="projects-title">
+  <header class="projects-heading">
+    <p class="section-kicker">Selected work · 2026</p>
+    <h2 id="projects-title">Projects</h2>
+    <p class="subtitle">Enterprise systems built around real operational workflows.</p>
+  </header>
 
-  <div class="project-grid">
-    <!-- CorePoint POS -->
-    <div class="project-card">
+  <article class="project-card flagship-card" aria-labelledby="omnifreight-title">
+    <header class="flagship-heading">
+      <div>
+        <p class="project-category">Enterprise Resource Planning <span>/</span> Logistics &amp; FinTech</p>
+        <h3 id="omnifreight-title">OmniFreight ERP <span>Multi-Modal Freight Logistics &amp; Fleet State Machine</span></h3>
+      </div>
+      <span class="corridor-tag">Mombasa Port <span aria-hidden="true">→</span> Nairobi ICD</span>
+    </header>
+
+    <p class="project-overview">An enterprise-grade, multi-tenant logistics ERP orchestrating real-time cargo consignments, fleet dispatching, checkpoint telemetry, and automated financial accounting across the Mombasa–Nairobi transport corridor. Features role-based sandboxed portals for Clients, Drivers, and Dispatchers with zero data leakage and append-only audit tracking.</p>
+
+    <section class="gallery-section" aria-labelledby="gallery-title">
+      <div class="section-row">
+        <div>
+          <p class="section-kicker">Inside the platform</p>
+          <h4 id="gallery-title">Product screens</h4>
+        </div>
+        <span class="gallery-count">04 screens</span>
+      </div>
+
+      <div class="screenshot-gallery">
+        @for (screenshot of screenshots; track screenshot.src; let index = $index) {
+          <figure class="screenshot-item">
+            <button class="screenshot-open" type="button" (click)="openScreenshot(screenshot)" [attr.aria-label]="'Expand screenshot: ' + screenshot.caption">
+              @if (unavailableScreenshots().has(screenshot.src)) {
+                <span class="screenshot-placeholder" aria-hidden="true">
+                  <span class="placeholder-mark">OF</span>
+                  <span>Screenshot asset pending</span>
+                </span>
+              } @else {
+                <img
+                  [ngSrc]="screenshot.src"
+                  [alt]="screenshot.alt"
+                  [width]="screenshot.width"
+                  [height]="screenshot.height"
+                  [priority]="index === 0"
+                  (error)="markScreenshotUnavailable(screenshot.src)"
+                >
+              }
+              <span class="expand-hint" aria-hidden="true">Expand <span>↗</span></span>
+            </button>
+            <figcaption>{{ screenshot.caption }}</figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="project-details" aria-label="Engineering details">
+      <div class="detail-column">
+        <p class="section-kicker">Technology</p>
+        <h4>Built for operations</h4>
+        <dl class="stack-list">
+          <div><dt>Backend &amp; architecture</dt><dd>Python · Django · PostgreSQL · Whitenoise · Transactional state machines</dd></div>
+          <div><dt>Frontend &amp; interface</dt><dd>Django Templates · HTMX · Tailwind CSS · Responsive design</dd></div>
+          <div><dt>Security &amp; delivery</dt><dd>Custom RBAC · Double-entry general ledger · Docker · Vercel/PaaS ready</dd></div>
+        </dl>
+      </div>
+
+      <div class="detail-column feature-column">
+        <p class="section-kicker">Engineering highlights</p>
+        <h4>One connected control room</h4>
+        <ol class="feature-list">
+          <li><strong>Multi-tenant access control</strong><span>Sandboxed Client, Driver, Dispatcher, and System Administrator portals; sign in with a username or generated OF-XXXXXX account ID.</span></li>
+          <li><strong>Deterministic shipment lifecycle</strong><span>Pending Review → Confirmed → Assigned → In-Transit → Delivered. Drivers can record active trip logs but cannot authorize delivery sign-off.</span></li>
+          <li><strong>Automated double-entry ledger</strong><span>Quote approval creates a pro-forma invoice; delivery confirmation creates the final invoice and balanced Accounts Receivable / Freight Revenue entries.</span></li>
+          <li><strong>Live telemetry and documents</strong><span>HTMX tracking updates without page reloads, with generated bills of lading, waybills, and delivery notes.</span></li>
+          <li><strong>Append-only audit trail</strong><span>Printable records capture operational actions, tariff changes, and driver assignments.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="architecture-section" id="omnifreight-architecture" aria-labelledby="architecture-title">
+      <div class="architecture-copy">
+        <p class="section-kicker">Live system architecture / case study</p>
+        <h4 id="architecture-title">From quote to balanced books</h4>
+        <p>Each transition is authorized, recorded, and linked to the financial event it creates. The same shipment record drives operations, customer tracking, documents, and the ledger.</p>
+      </div>
+      <ol class="flow-list" aria-label="OmniFreight system flow">
+        <li><span>01</span><strong>Quote &amp; review</strong><small>Tariff · pro-forma invoice</small></li>
+        <li><span>02</span><strong>Confirm &amp; assign</strong><small>Dispatcher · vehicle · driver</small></li>
+        <li><span>03</span><strong>Track &amp; deliver</strong><small>Checkpoints · delivery evidence</small></li>
+        <li><span>04</span><strong>Invoice &amp; audit</strong><small>Balanced ledger · immutable trail</small></li>
+      </ol>
+    </section>
+
+    <footer class="project-actions">
+      <a class="action-primary" href="https://github.com/okemwabrian/OminiFreiegt_erp.git" target="_blank" rel="noopener noreferrer">View GitHub Code <span aria-hidden="true">↗</span></a>
+      <a class="action-secondary" href="#omnifreight-architecture">Live System Architecture / Case Study <span aria-hidden="true">↓</span></a>
+    </footer>
+  </article>
+
+  <div class="project-grid" aria-label="Other projects">
+    <article class="project-card project-card-content">
+      <p class="project-category">Retail operations</p>
       <h3>CorePoint POS</h3>
-      <p>A monolithic, enterprise-grade Point of Sale (POS) system completely bypassing the default Django admin panel to deliver a secure, role-protected frontend for inventory, CRM, and sales management featuring atomic transactions.</p>
-      <div class="tech-stack">
-        <span>Python</span>
-        <span>Django</span>
-        <span>Bootstrap 5</span>
-      </div>
+      <p>A role-protected point-of-sale system for inventory, CRM, and sales management, with atomic transactions and a custom frontend.</p>
+      <div class="tech-stack"><span>Python</span><span>Django</span><span>Bootstrap 5</span></div>
       <a href="https://github.com/okemwabrian/pos-backend-api.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </div>
+    </article>
 
-    <!-- Kazi Connect -->
-    <div class="project-card">
+    <article class="project-card project-card-content">
+      <p class="project-category">Mobile platform</p>
       <h3>Kazi Connect</h3>
-      <p>A cross-platform mobile application bridging domestic workers and employers, featuring a secure Firebase backend with role-based routing.</p>
-      <div class="tech-stack">
-        <span>Flutter</span>
-        <span>Dart</span>
-        <span>Firebase</span>
-      </div>
+      <p>A cross-platform application bridging domestic workers and employers, with a secure Firebase backend and role-based routing.</p>
+      <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
       <a href="https://github.com/okemwabrian/Kazi_connect.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </div>
-
-    <!-- Shopwave -->
-    <div class="project-card">
-      <h3>Shopwave</h3>
-      <p>A full-stack e-commerce and hardware management architecture with full CRUD operations, fully containerized using Docker for seamless deployment.</p>
-      <div class="tech-stack">
-        <span>Python</span>
-        <span>Django</span>
-        <span>Docker</span>
-      </div>
-      <a href="https://github.com/okemwabrian/shopwave.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </div>
-
-    <!-- SmartSeason -->
-    <div class="project-card">
-      <h3>SmartSeason Field Monitoring System</h3>
-      <p>A full-stack agricultural monitoring platform with JWT authentication, role-based access, and dynamic field-status logic.</p>
-      <div class="tech-stack">
-        <span>React</span>
-        <span>Django REST</span>
-        <span>Netlify</span>
-      </div>
-      <a href="https://github.com/okemwabrian/shamba-frontend.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </div>
-
-    <!-- Pamoja Kenya MN -->
-    <div class="project-card">
-      <h3>Pamoja Kenya MN</h3>
-      <p>A Django-based platform supporting diaspora families with backend systems for financial contribution management and 24/7 cloud availability.</p>
-      <div class="tech-stack">
-        <span>Python</span>
-        <span>Django</span>
-        <span>Cloud</span>
-      </div>
-      <a href="https://github.com/okemwabrian/PamojakeBackend.git" class="btn-link" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
-    </div>
-
+    </article>
   </div>
-</div>
+
+  <dialog #screenshotDialog class="screenshot-dialog" (cancel)="closeScreenshot()" (close)="onScreenshotDialogClose()" (click)="closeScreenshotOnBackdrop($event)">
+    <button class="dialog-close" type="button" aria-label="Close expanded screenshot" (click)="closeScreenshot()">×</button>
+    @if (activeScreenshot(); as screenshot) {
+      <figure>
+        @if (unavailableScreenshots().has(screenshot.src)) {
+          <div class="screenshot-placeholder dialog-placeholder"><span class="placeholder-mark">OF</span><span>Screenshot asset pending</span></div>
+        } @else {
+          <img [ngSrc]="screenshot.src" [alt]="screenshot.alt" [width]="screenshot.width" [height]="screenshot.height" priority (error)="markScreenshotUnavailable(screenshot.src)">
+        }
+        <figcaption>{{ screenshot.caption }}</figcaption>
+      </figure>
+    }
+  </dialog>
+</section>
