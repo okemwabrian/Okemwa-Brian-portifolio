@@ -78,8 +78,8 @@ export class Projects {
       height: 1012,
     },
     {
-      src: '/pos_Inventory management.png',
-      thumbnailSrc: '/pos_Inventory management.png',
+      src: '/pos_inventory_management.png',
+      thumbnailSrc: '/pos_inventory_management.png',
       alt: 'CorePoint POS inventory catalog with stock levels and restocking actions',
       caption: 'Product catalog, stock levels, and restocking',
       brand: 'CP',

@@ -42,7 +42,7 @@ describe('Projects', () => {
       .toEqual([
         '/pos_dashbord.png',
         '/pos_Terminal.png',
-        '/pos_Inventory management.png',
+        '/pos_inventory_management.png',
         '/pos_report.png',
       ]);
     expect(posCard.querySelector('.action-primary')?.getAttribute('href'))
